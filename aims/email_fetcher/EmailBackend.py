@@ -19,10 +19,12 @@ class EmailBackend:
 
         #Loop through list and saving every attachment of the email into local directory
         for email in email_list:
-            get_email.save_attachment(email,'C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp')
+            get_email.save_attachment(email,'C:\\Users\\User\\Documents\\Attachment')
 
-        xlsx_file_path = "C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp\\Marks Table.xlsx"
-        csv_file_path = "C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp\\Marks Table.csv"
+        #Only works on your machine if you specify the directory correctly
+        #Only works on WANJO's ACER NITRO 5 GTX1650
+        xlsx_file_path = "C:\\Users\\User\\Documents\\Attachment\\Marks Table.xlsx"
+        csv_file_path = "C:\\Users\\User\\Documents\\Attachment\\Marks Table.csv"
 
         self.convert_xlsx_to_csv(xlsx_file_path, csv_file_path)
 
@@ -32,4 +34,3 @@ class EmailBackend:
     def convert_xlsx_to_csv(self, xlsx_file_path, converted_csv_file_path):
         read_file = pd.read_excel(xlsx_file_path)
         read_file.to_csv(converted_csv_file_path, index = None, header=True)
-
