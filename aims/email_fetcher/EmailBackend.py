@@ -1,10 +1,10 @@
 from .FetchEmail import FetchEmail
 import pandas as pd
 
-class email_backend:
+class EmailBackend:
         
     #Method to access email, fetch messages and save attachment
-    def run_email_backend():
+    def run_email_backend(self):
 
         #Access Details
         user_email = 'logos.hackathon@gmail.com'
@@ -19,7 +19,12 @@ class email_backend:
 
         #Loop through list and saving every attachment of the email into local directory
         for email in email_list:
-            get_email.save_attachment(email,'C:\\Users\\User\\Documents\\Attachment')
+            get_email.save_attachment(email,'C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp')
+
+        xlsx_file_path = "C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp\\Marks Table.xlsx"
+        csv_file_path = "C:\\Users\\alifm\PycharmProjects\\Dell_Hack2Hire_Test\\tmp\\Marks Table.csv"
+
+        self.convert_xlsx_to_csv(xlsx_file_path, csv_file_path)
 
     # Method to convern .xlsx filetype to .csv filetype
     # xlsx_file_path must be in this form => "path\\to\\xlsx\\file\\sample.xlsx"
