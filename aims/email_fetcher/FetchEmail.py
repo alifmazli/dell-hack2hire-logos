@@ -58,5 +58,12 @@ class FetchEmail:
         return att_path
 
     #Get just the file name
-    def getFileName(filename):
-        return filename
+    def getFileName(self,messages_list):
+        for part in messages_list.walk():
+            if part.get_content_maintype() == 'multipart':
+                continue
+            if part.get('Content-Disposition') is None:
+                continue
+            
+            filename = part.get_filename()
+            return filename
