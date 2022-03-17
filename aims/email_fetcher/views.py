@@ -30,15 +30,15 @@ def timed_job():
     run = EmailBackend()
     run.run_email_backend()
 
-# #sched.start()
+#sched.start()
 
-# #For testing purposes, you can mess with this code
-# @sched.scheduled_job('interval', seconds=5)
-# def timed_job():
-#     print('Interval')
-#     run = EmailBackend()
-#     run.run_email_backend()
-# sched.start()
+#For testing purposes, you can mess with this code
+@sched.scheduled_job('interval', seconds=5)
+def timed_job():
+    print('Interval')
+    run = EmailBackend()
+    run.run_email_backend()
+sched.start()
 
 #Views go here
 def dashboard_view(request):
