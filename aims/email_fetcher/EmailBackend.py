@@ -27,18 +27,35 @@ class EmailBackend:
         for email in email_list:
             get_email.save_attachment(email,truepath)
 
-        #Only works on your machine if you specify the directory correctly
-        #Only works on WANJO's ACER NITRO 5 GTX1650
-        xlsx_file_name = "\\Marks Table.xlsx"
-        csv_file_name = "\\Marks Table.csv"
-        xlsx_file_path = truepath + xlsx_file_name
-        csv_file_path = truepath + csv_file_name
+        #Loop through email list and saving each attachment name into a filename list
+        filename_list = []
+        csv_format = ".csv"
+        for email in email_list:
+            filename = get_email.getFileName(email)
+            if(filename is None):
+                continue
+            filename_list.append(filename)
 
-        self.convert_xlsx_to_csv(xlsx_file_path, csv_file_path)
+        #Set convention for file path and file name
+        for filename in filename_list:
+            #Check OS type first
+            if(path.guessWindows):
+                #Set names for each attachment unique to OS
+                palangWindows = "\\"
+                xlsx_file_name = palangWindows + filename
+                csv_file_name = palangWindows + filename + csv_format
+                xlsx_file_path = truepath + xlsx_file_name
+                csv_file_path = truepath + csv_file_name
+                self.convert_xlsx_to_csv(xlsx_file_path, csv_file_path)
+            else:
+                palangOthers = "/"
+                xlsx_file_name = palangOthers + filename
+                csv_file_name = palangOthers + filename + csv_format
+                xlsx_file_path = truepath + xlsx_file_name
+                csv_file_path = truepath + csv_file_name
+                self.convert_xlsx_to_csv(xlsx_file_path, csv_file_path)
 
     # Method to convern .xlsx filetype to .csv filetype
-    # xlsx_file_path must be in this form => "path\\to\\xlsx\\file\\sample.xlsx"
-    # csv_file_path must be in this form => "path\\to\\csv\\file\\sample.csv" <== attach your desired csv file name
     def convert_xlsx_to_csv(self, xlsx_file_path, converted_csv_file_path):
         read_file = pd.read_excel(xlsx_file_path)
         read_file.to_csv(converted_csv_file_path, index = None, header=True)
