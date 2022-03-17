@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .EmailBackend import EmailBackend
 from apscheduler.schedulers.background import BackgroundScheduler
 from django.views.generic import ListView
-<<<<<<< HEAD
 from .models import File
 from .forms import FileForm
 from .FetchEmail import FetchEmail
@@ -10,8 +9,6 @@ import os
 import imaplib
 import email
 from .OSguesser import DefinePath
-=======
->>>>>>> 26b37d2c53195760162841399582593071d20ff0
 
 #Timer to schedule when to get attachment. Don't touch
 sched = BackgroundScheduler(timezone="Asia/Singapore")
@@ -33,15 +30,15 @@ def timed_job():
     run = EmailBackend()
     run.run_email_backend()
 
-# #sched.start()
+#sched.start()
 
-# #For testing purposes, you can mess with this code
-# @sched.scheduled_job('interval', seconds=5)
-# def timed_job():
-#     print('Interval')
-#     run = EmailBackend()
-#     run.run_email_backend()
-# sched.start()
+#For testing purposes, you can mess with this code
+@sched.scheduled_job('interval', seconds=5)
+def timed_job():
+    print('Interval')
+    run = EmailBackend()
+    run.run_email_backend()
+sched.start()
 
 #Views go here
 def dashboard_view(request):
