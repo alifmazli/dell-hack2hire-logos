@@ -16,8 +16,8 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-    <!--<link rel="stylesheet" crossorigin href="https://dds.dell.com/web-components/2.0.1/css/dds-fonts.min.css" />
-    <link rel="stylesheet" crossorigin href="https://dds.dell.com/web-components/2.0.1/css/dds-icons.min.css" />-->
+    {% comment %} <link rel="stylesheet" crossorigin href="https://dds.dell.com/web-components/2.0.1/css/dds-fonts.min.css" />
+    <link rel="stylesheet" crossorigin href="https://dds.dell.com/web-components/2.0.1/css/dds-icons.min.css" /> {% endcomment %}
 
     <!-- CSS Files -->
     <link href="/static/email_fetcher/css/bootstrap.min.css" rel="stylesheet" />
@@ -30,21 +30,13 @@
 
 <body>
     <div class="wrapper">
-
         {% include 'includes/sidebar.html' %}
-        
         <div class="main-panel">
-            
             {% include 'includes/navigation.html' %}
-
             {% block content %}{% endblock content %}
-            
             {% include 'includes/footer.html' %}
-
         </div>
-
     </div>
-
 </div> 
 </body>
 
