@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.dashboard_view, name='index'),
     path('login/', views.login_view, name='login'),
     path('register/', views.register_view, name='register'),
-    path('upload', views.display_files_view, name='upload'),
+    path('mailbox/', views.mailbox_view, name='mailbox'),
+    path('inventory/', views.inventory_view, name='inventory')
 ]

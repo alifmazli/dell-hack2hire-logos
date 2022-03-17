@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="green">
+<div class="sidebar" data-color="dell-blue" data-image="static/email_fetcher/img/tech-planet.jpg">
     <!--
 Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -17,40 +17,16 @@ Tip 2: you can also add an image using data-image tag
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item nav-item {% if 'user' in segment %} active {% endif %}">
-                <a class="nav-link" href="/user.html">
-                    <i class="nc-icon nc-circle-09"></i>
-                    <p>User Profile</p>
+            <li class="nav-item nav-item">
+                <a class="nav-link" href="{% url 'mailbox' %}">
+                    <i class="nc-icon nc-email-85"></i>
+                    <p>Mailbox</p>
                 </a>
             </li>
-            <li class="nav-item nav-item {% if 'table' in segment %} active {% endif %}">
-                <a class="nav-link" href="/table.html">
-                    <i class="nc-icon nc-notes"></i>
-                    <p>Table List</p>
-                </a>
-            </li>
-            <li class="nav-item nav-item {% if 'typography' in segment %} active {% endif %}">
-                <a class="nav-link" href="/typography.html">
-                    <i class="nc-icon nc-paper-2"></i>
-                    <p>Typography</p>
-                </a>
-            </li>
-            <li class="nav-item nav-item {% if 'icons' in segment %} active {% endif %}">
-                <a class="nav-link" href="/icons.html">
-                    <i class="nc-icon nc-atom"></i>
-                    <p>Icons</p>
-                </a>
-            </li>
-            <li class="nav-item nav-item {% if 'maps' in segment %} active {% endif %}">
-                <a class="nav-link" href="/maps.html">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>Maps</p>
-                </a>
-            </li>
-            <li class="nav-item nav-item {% if 'notif' in segment %} active {% endif %}">
-                <a class="nav-link" href="/notifications.html">
-                    <i class="nc-icon nc-bell-55"></i>
-                    <p>Notifications</p>
+            <li class="nav-item nav-item">
+                <a class="nav-link" href="{% url 'inventory' %}">
+                    <i class="nc-icon nc-layers-3"></i>
+                    <p>Inventory Status</p>
                 </a>
             </li>
         </ul>
