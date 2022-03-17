@@ -24,12 +24,13 @@ def timed_job():
 
 sched.start()
 
-""""
+"""
 #For testing purposes, you can mess with this code
 @sched.scheduled_job('interval', seconds=10)
 def timed_job():
-    print('Downloaded attachment')
-    run = email_backend.run_email_backend()
+    print('Interval')
+    run = EmailBackend()
+    run.run_email_backend()
 sched.start()
 """
 
