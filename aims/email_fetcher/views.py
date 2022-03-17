@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .EmailBackend import EmailBackend
 from apscheduler.schedulers.background import BackgroundScheduler
 from django.views.generic import ListView
+<<<<<<< HEAD
 from .models import File
 from .forms import FileForm
 from .FetchEmail import FetchEmail
@@ -9,6 +10,8 @@ import os
 import imaplib
 import email
 from .OSguesser import DefinePath
+=======
+>>>>>>> 26b37d2c53195760162841399582593071d20ff0
 
 #Timer to schedule when to get attachment. Don't touch
 sched = BackgroundScheduler(timezone="Asia/Singapore")
@@ -48,12 +51,7 @@ def login_view(request):
     return render(request, 'accounts/login.html')
 
 def register_view(request):
-    return render(request, 'accounts/register.html')   
-
-# returns all data from recent retrieved emails_list
-class RecentEmailListView(ListView):
-    pass
-
+    return render(request, 'accounts/register.html')  
 
 # exports a list of messages from our mailbox
 def display_files_view(request):
@@ -72,14 +70,11 @@ def display_files_view(request):
     mail.login(user_email, app_password)
     # select inbox
     mail.select("INBOX")
+def mailbox_view(request):
+    return render(request, 'email_fetcher/mailbox.html')
 
-    # select specific mails
-    # insert desired filter as parameter in .search (FROM, TO, SUBJECT...)
-    # else it'll return all emails in mailbox
-    # .search returns 2 values =>
-    # 'type' tells us whether request was 'ok' or not (set as _ to dispose afterwards)
-    # 'email_data' is id's of all the emails
-    _, email_data = mail.search(None, 'all')
+def inventory_view(request):
+    return render(request, 'email_fetcher/inventory.html')
 
     # total number of mails from specific user
     email_ids = email_data[0]
@@ -194,3 +189,4 @@ def display_files_view(request):
 #     }
 
 #     return render(request, 'email_fetcher/display_tmp.html', context)
+# returns all data from recent retrieved emails
