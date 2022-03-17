@@ -3,7 +3,7 @@ from .FetchEmail import FetchEmail
 class EmailBackend:
 
     #Method to access email, fetch messages and save attachment
-    def run_backend():
+    def run_backend(self):
 
         #Access Details
         user_email = 'logos.hackathon@gmail.com'
@@ -18,4 +18,4 @@ class EmailBackend:
 
         #Loop through list and saving every attachment of the email into local directory
         for email in email_list:
-            get_email.save_attachment(email,'C:\\Users\\User\\Documents\\VS Projects\\basic-django-app\\blog\\attachments')
+            get_email.save_attachment(email,'Any directory you want')
