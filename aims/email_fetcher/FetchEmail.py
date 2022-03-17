@@ -57,4 +57,6 @@ class FetchEmail:
                 fp.close()
         return att_path
 
-    
+    #Get just the file name
+    def getFileName(filename):
+        return filename

@@ -24,7 +24,7 @@ def timed_job():
 
 sched.start()
 
-""""
+"""
 #For testing purposes, you can mess with this code
 @sched.scheduled_job('interval', seconds=10)
 def timed_job():
