@@ -16,7 +16,7 @@ class Product (models.Model):
     def __str__(self):
         return self.product_name
 
-class Inventory (models.Model) :
+class Inventory (models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     stock = models.IntegerField(null=True)
