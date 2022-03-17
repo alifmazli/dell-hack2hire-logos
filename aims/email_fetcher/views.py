@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .EmailBackend import EmailBackend
 from apscheduler.schedulers.background import BackgroundScheduler
+from django.views.generic import ListView
 
 #Timer to schedule when to get attachment. Don't touch
 sched = BackgroundScheduler(timezone="Asia/Singapore")
@@ -35,11 +36,15 @@ sched.start()
 """
 
 #Views go here
-def dashboardView(request):
+def dashboard_view(request):
     return render(request, 'email_fetcher/index.html')
 
-def loginView(request):
+def login_view(request):
     return render(request, 'accounts/login.html')
 
-def registerView(request):
+def register_view(request):
     return render(request, 'accounts/register.html')   
+
+# returns all data from recent retrieved emails
+class RecentEmailListView(ListView):
+    pass
