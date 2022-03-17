@@ -16,6 +16,8 @@ class FetchEmail:
         emails = []
 
         # change search argument based on our needs
+        #unSeen - is for unread messages
+        #all - is for all messages
         (result, messages) = self.connection.search(None, 'all')
         if result == "OK":
             for message in messages[0].split(b' '):
