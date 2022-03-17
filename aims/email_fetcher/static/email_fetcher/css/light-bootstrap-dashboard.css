@@ -191,7 +191,7 @@ body > .navbar-collapse {
   width: 260px;
   display: block;
   z-index: 1;
-  color: #fff;
+  color: #293b4d;
   font-weight: 200;
   background-size: cover;
   background-position: center center; }
@@ -420,9 +420,14 @@ body > .navbar-collapse {
     background: #9368E9;
     background: linear-gradient(to bottom, #9368E9 0%, #943bea 100%);
     background-size: 150% 150%; }
+    .sidebar[data-color="dell-blue"]:after,
+  body > .navbar-collapse[data-color="dell-blue"]:after {
+    background: #293b4d;
+    background: linear-gradient(to bottom, #293b4d 0%, #293b4d 100%);
+    background-size: 150% 150%; }
 
 .main-panel {
-  background: rgba(203, 203, 210, 0.15);
+  background: #40586d;
   position: relative;
   float: right;
   width: calc(100% - 260px);

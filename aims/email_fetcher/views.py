@@ -50,6 +50,12 @@ def login_view(request):
 def register_view(request):
     return render(request, 'accounts/register.html')  
 
+def mailbox_view(request):
+    return render(request, 'email_fetcher/mailbox.html')
+
+def inventory_view(request):
+    return render(request, 'email_fetcher/inventory.html')
+
 # exports a list of messages from our mailbox
 def display_files_view(request):
 
@@ -67,12 +73,6 @@ def display_files_view(request):
     mail.login(user_email, app_password)
     # select inbox
     mail.select("INBOX")
-def mailbox_view(request):
-    return render(request, 'email_fetcher/mailbox.html')
-
-def inventory_view(request):
-    return render(request, 'email_fetcher/inventory.html')
-
     # total number of mails from specific user
     email_ids = email_data[0]
     id_list = email_ids.split()
