@@ -1,4 +1,4 @@
-from .FetchEmail import FetchEmail
+import FetchEmail
 
 class EmailBackend:
 
@@ -18,4 +18,5 @@ class EmailBackend:
 
         #Loop through list and saving every attachment of the email into local directory
         for email in email_list:
-            get_email.save_attachment(email,'Any directory you want')
+            get_email.save_attachment(email,'C:\\Users\\User\\Documents\\Attachment')
+
