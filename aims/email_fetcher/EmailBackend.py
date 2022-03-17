@@ -1,11 +1,9 @@
-import FetchEmail
-from apscheduler.schedulers.background import BackgroundScheduler
-import os, time
+from .FetchEmail import FetchEmail
 
-class EmailBackend:
+class email_backend:
         
     #Method to access email, fetch messages and save attachment
-    def run_backend(self):
+    def run_email_backend():
 
         #Access Details
         user_email = 'logos.hackathon@gmail.com'
