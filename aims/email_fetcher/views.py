@@ -39,4 +39,7 @@ def dashboardView(request):
     return render(request, 'email_fetcher/index.html')
 
 def loginView(request):
-    return render(request, 'email_fetcher/login.html')
+    return render(request, 'accounts/login.html')
+
+def registerView(request):
+    return render(request, 'accounts/register.html')   
