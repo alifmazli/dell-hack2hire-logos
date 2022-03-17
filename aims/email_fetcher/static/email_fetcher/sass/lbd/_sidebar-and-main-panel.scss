@@ -257,6 +257,12 @@ body > .navbar-collapse{
     &[data-color="purple"]:after{
         @include icon-gradient($new-purple, $purple-color-bottom);
     }
+    &[data-color="nvidia-green"]:after{
+        background: #7AB547;
+    }
+    &[data-color="nvidia-black"]:after{
+        background: #1A1918;
+    }
 }
 
 
