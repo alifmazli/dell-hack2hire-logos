@@ -18,9 +18,26 @@
                     </div>
 
                     <div class="card-body ">
-                        <div id="chartHours" class="ct-chart">
-                            <canvas id="pieChart"></canvas>
-                        </div>
+                        <ul class="nav">
+                            <li class="nav-item nav-item {% if 'index' in segment %} active {% endif %}">
+                                <a class="nav-link" href="/">
+                                    <i class="nc-icon nc-chart-pie-35"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="nav-item nav-item">
+                                <a class="nav-link" href="{% url 'mailbox' %}">
+                                    <i class="nc-icon nc-email-85"></i>
+                                    <p>Mailbox</p>
+                                </a>
+                            </li>
+                            <li class="nav-item nav-item">
+                                <a class="nav-link" href="{% url 'inventory' %}">
+                                    <i class="nc-icon nc-layers-3"></i>
+                                    <p>Inventory Status</p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="card-footer ">
