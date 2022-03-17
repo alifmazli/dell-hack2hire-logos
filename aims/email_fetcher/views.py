@@ -38,5 +38,5 @@ sched.start()
 def dashboardView(request):
     return render(request, 'email_fetcher/index.html')
 
-# def loginView(request):
-#     return render(request, 'email_fetcher/login.html')
+def loginView(request):
+    return render(request, 'email_fetcher/login.html')
