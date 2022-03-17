@@ -21,3 +21,10 @@ class Inventory (models.Model) :
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     stock = models.IntegerField(null=True)
     last_updated = models.DateField(auto_now=TRUE)
+
+class File(models.Model):
+    name= models.CharField(max_length=500)
+    filepath= models.FileField(upload_to='files/', null=True, verbose_name="")
+
+    def __str__(self):
+        return self.name + ": " + str(self.filepath)
