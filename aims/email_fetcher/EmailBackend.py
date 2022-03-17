@@ -19,6 +19,7 @@ class EmailBackend:
 
         #Loop through list and saving every attachment of the email into local directory
         for email in email_list:
+            #Alep: To revise this method
             get_email.save_attachment(email,'C:\\Users\\User\\Documents\\Attachment')
 
         #Only works on your machine if you specify the directory correctly
