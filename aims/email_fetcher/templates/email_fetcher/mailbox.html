@@ -18,26 +18,37 @@
                     </div>
 
                     <div class="card-body ">
-                        <ul class="nav">
-                            <li>
-                                <a class="nav-link" href="/">
-                                    <i class="nc-icon nc-chart-pie-35"></i>
-                                    <p>Dashboard</p>
-                                </a>
-                            </li>
-                            <li class="nav-item nav-item">
-                                <a class="nav-link" href="{% url 'mailbox' %}">
-                                    <i class="nc-icon nc-email-85"></i>
-                                    <p>Mailbox</p>
-                                </a>
-                            </li>
-                            <li class="nav-item nav-item">
-                                <a class="nav-link" href="{% url 'inventory' %}">
-                                    <i class="nc-icon nc-layers-3"></i>
-                                    <p>Inventory Status</p>
-                                </a>
-                            </li>
-                        </ul>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product ID</th>
+                                    <th>Product Name</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1001</td>
+                                    <td>GTX 1650</td>
+                                    <td>50324</td>
+                                </tr>
+                                <tr>
+                                    <td>2001</td>
+                                    <td>GTX 1080</td>
+                                    <td>1143</td>
+                                </tr>
+                                <tr>
+                                    <td>3001</td>
+                                    <td>RTX 2060</td>
+                                    <td>19923</td>
+                                </tr>
+                                <tr>
+                                    <td>4001</td>
+                                    <td>RTX 3070</td>
+                                    <td>39126</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="card-footer ">
