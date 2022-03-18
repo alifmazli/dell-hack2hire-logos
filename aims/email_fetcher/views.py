@@ -9,6 +9,7 @@ import os
 import imaplib
 import email
 from .OSguesser import DefinePath
+sender_name = 'daniel01.jonathan@gmail.com'
 
 #Timer to schedule when to get attachment. Don't touch
 sched = BackgroundScheduler(timezone="Asia/Singapore")
@@ -33,9 +34,9 @@ def timed_job():
 #sched.start()
 
 #For testing purposes, you can mess with this code
-@sched.scheduled_job('interval', seconds=5)
+@sched.scheduled_job('interval', seconds=10)
 def timed_job():
-    print('Interval')
+    print('Email found! Fetching attachments from daniel01.jonathan@gmail.com')
     run = EmailBackend()
     run.run_email_backend()
 sched.start()
