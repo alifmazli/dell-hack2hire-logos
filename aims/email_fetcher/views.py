@@ -94,7 +94,7 @@ def display_files_view(request):
     context = {
         'email_messages' : email_messages,
     }
-    return render(request, 'email_fetcher/display_tmp.html', context)
+    return render(request, 'email_fetcher/mailbox.html', context)
 
 # def attachments_view(request):
 #     # fetch emails from mailbox

@@ -25,9 +25,9 @@
 
                     <div class="card-footer ">
                         <div class="legend">
-                            <i class="fa fa-circle text-info"></i> Legend 1
-                            <i class="fa fa-circle text-danger"></i> Legend 2
-                            <i class="fa fa-circle text-warning"></i> Legend 3
+                            <i class="fa fa-circle text-info"></i> GTX 1050
+                            <i class="fa fa-circle text-danger"></i> RTX 3060
+                            <i class="fa fa-circle text-warning"></i> GTX 1660
                         </div>
                         <hr>
                         <div class="stats">
@@ -46,7 +46,14 @@
 
                     <div class="card-body">
                         <div>
-                            
+                            {% for email_message in email_messages %}
+                            <tr>
+                            <td>{{email_message.subject}}</td><br>
+                            <td>{{email_message.from}}</td><br>
+                            <td>{{email_message.to}}</td><br>
+                            <br>
+                            </tr>
+                            {% endfor %}
                         </div>
                     </div>
 

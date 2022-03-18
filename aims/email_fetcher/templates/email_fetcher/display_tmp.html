@@ -7,14 +7,14 @@
     
     <h1>File Info</h1>
 
-    {% for email_message in email_messages %}
+    {{% endfor %}% for email_message in email_messages %}
     <tr>
       <td>{{email_message.subject}}</td><br>
       <td>{{email_message.from}}</td><br>
       <td>{{email_message.to}}</td><br>
       <br>
     </tr>
-    {% endfor %}
+    
 
 
 
